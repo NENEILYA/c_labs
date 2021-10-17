@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #define OLD 60
 #define YOUNG 18
-#include "common.c"
+#include "../common.c"
 
 /*
  1 - год
