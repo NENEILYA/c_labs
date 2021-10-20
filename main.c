@@ -1,5 +1,7 @@
-#include "labs/lab5.c"
+#include <stdio.h>
+#include "labs/lab6.c"
+
 int main(){
-    lab5();
+    lab6();
     return 0;
 }
