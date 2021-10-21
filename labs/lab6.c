@@ -39,7 +39,7 @@ int convI(int tmp, int ind, char* result){
         i+=1;
     }
     int size = 0;
-    for(i=DATACOUNT-1;i!=0;i--){
+    for(i=DATACOUNT-1;i!=-1;i--){
         if (result[i] != '\n'){
             size = i+1;
             break;
@@ -82,6 +82,6 @@ int lab6(){
     for(int n=1;n<=size;n++){
         la_finale[size - n] = i[n-1];
     }
-    printf("\nРезультат: %s.%s", la_finale, f);
+    printf("Результат: %s.%s", la_finale, f);
     return 0;
 }
