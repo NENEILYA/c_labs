@@ -6,7 +6,7 @@
 
 double check_double(void){
     double a = 0;
-    while (scanf("%lf",&a)!= 1){
+    while (scanf("%lf",&a) != 1){
         while(getchar() != '\n'){
         }
         printf("Введите корректное число: ");
@@ -19,7 +19,7 @@ int check_int(void){
     while (scanf("%i",&a)!= 1){
         while(getchar() != '\n'){
         }
-        printf("Введите корректное число: ");
+        printf("Enter valid value: ");
     }
     return a;
 }
