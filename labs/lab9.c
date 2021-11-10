@@ -14,20 +14,19 @@ int fillMass( int teams, int* result,int* var){
     for(int i = 0;i < teams; i++){
         for(int j = i;j < teams; j++){
             if(j==i){
-                printf("%d",&result[i][j]);
-                *(result+i*j) = 0;
+                *(result+16*i+j) = 0;
             }else{
-                *(result+i*j) = *(var+(rand() % 3));
-                printf("%d",&result[i][j]);
+                int idx = (rand() % 3);
+                *(result+16*i+j) = *(var+idx);
+                *(result+16*j+i) = *(var+2-idx);
             }
         }
-    printf("\n");
     }
 }
 
 
 int lab9(){
-    int teams, win, lose, draw;
+    int teams, win, draw, lose;
     printf("Teams count:");
     teams = check_int();
     printf("Enter win:");
@@ -36,8 +35,20 @@ int lab9(){
     lose = check_int();
     printf("Enter draw:");
     draw = check_int();
-    int* result[16][16];
-    int* var[3] = {win, lose, draw};
-    fillMass(teams, &result, &var);
+    int result[16][16];
+    int var[3] = {win, draw, lose};
+    for(int i=0;i<16;i++){
+        for(int j=0;j<16;j++){
+            result[i][j] = 0;
+        }
+    }
+    printf("\n");
+    fillMass(teams, (int *) &result, (int *) &var);
+    for(int i=0;i<teams;i++){
+        for(int j=0;j<teams;j++){
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
     return 0;
 }
