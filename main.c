@@ -1,4 +1,4 @@
-#include "labs/lab6.c"
+#include "labs/lab9.c"
 
 int main(){
     lab9();
