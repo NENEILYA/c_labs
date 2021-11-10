@@ -16,7 +16,7 @@ double check_double(void){
 
 int check_int(void){
     int a = 0;
-    while (scanf("%i",&a)!= 1){
+    while (scanf("%i",&a)!= 1 || a<0){
         while(getchar() != '\n'){
         }
         printf("Enter valid value: ");
@@ -27,4 +27,14 @@ int check_int(void){
 bool if_in_range(int x, int start, int end){
     if (start <= x && x <= end) return true;
     else return false;
+}
+
+int check_int_spec(void){
+    int a = 0;
+    while (scanf("%i",&a)!= 1 || a<=0 || a>=16){
+        while(getchar() != '\n'){
+        }
+        printf("Enter valid value: ");
+    }
+    return a;
 }
