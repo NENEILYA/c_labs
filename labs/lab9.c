@@ -15,9 +15,9 @@ int fillMass( int teams, int* result,int* var){
         for(int j = i;j < teams; j++){
             if(j==i){
                 printf("%d",&result[i][j]);
-                result[i][j] = 0;
+                *(result+i*j) = 0;
             }else{
-                result[i][j] = *var[rand() % 3];
+                *(result+i*j) = *(var+(rand() % 3));
                 printf("%d",&result[i][j]);
             }
         }
