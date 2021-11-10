@@ -2,6 +2,6 @@
 #include "labs/lab6.c"
 
 int main(){
-    lab6();
+    lab9();
     return 0;
 }
