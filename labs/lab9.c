@@ -7,7 +7,6 @@
 #include "../common.c"
 
 
-
 int lab9(){
     int teams, lose, draw, win;
     printf("Введите колличество команд: ");
