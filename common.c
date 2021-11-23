@@ -14,27 +14,41 @@ double check_double(void){
     return a;
 }
 
-int check_int(void){
-    int a = 0;
-    while (scanf("%i",&a)!= 1 || a<0){
-        while(getchar() != '\n'){
-        }
-        printf("Enter valid value: ");
-    }
-    return a;
-}
-
 bool if_in_range(int x, int start, int end){
     if (start <= x && x <= end) return true;
     else return false;
 }
 
-int check_int_spec(void){
+int check_int(int min, int max, char inf){
     int a = 0;
-    while (scanf("%i",&a)!= 1 || a<=0 || a>=16){
-        while(getchar() != '\n'){
+    if(min == max){
+        while (scanf("%i",&a)!= 1){
+            while(getchar() != '\n'){
+            }
+            printf("Enter valid value: ");
         }
-        printf("Enter valid value: ");
+        return a;
+    }else if(inf == 'L'){
+        while (scanf("%i",&a)!= 1 || a > max){
+            while(getchar() != '\n'){
+            }
+            printf("Enter valid value: ");
+        }
+        return a;
+    }else if(inf == 'R'){
+        while (scanf("%i",&a)!= 1 || a < min){
+            while(getchar() != '\n'){
+            }
+            printf("Enter valid value: ");
+        }
+        return a;
+    }else{
+        while (scanf("%i",&a)!= 1 || a > max || a < min){
+            while(getchar() != '\n'){
+            }
+            printf("Enter valid value: ");
+        }
+        return a;
     }
-    return a;
+
 }

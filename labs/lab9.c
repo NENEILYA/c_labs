@@ -26,22 +26,17 @@ void fillMass( int teams, int* result,int* var){
 
 
 int lab9(){
-    int teams, win, draw, lose, sum, max = 0;
-    printf("Teams count:");
-    teams = check_int_spec();
-    printf("Enter win:");
-    win = check_int();
-    printf("Enter lose:");
-    lose = check_int();
-    printf("Enter draw:");
-    draw = check_int();
+    int teams = 15, win = 3, draw = 1, lose = 0, sum, max = 0;
+//    printf("Teams count:");
+//    teams = check_int_spec();
+//    printf("Enter win:");
+//    win = check_int();
+//    printf("Enter lose:");
+//    lose = check_int();
+//    printf("Enter draw:");
+//    draw = check_int();
     int result[16][16];
     int var[3] = {win, draw, lose};
-    for(int i=0;i<16;i++){
-        for(int j=0;j<16;j++){
-            result[i][j] = 0;
-        }
-    }
     printf("\n");
     fillMass(teams, (int *) &result, (int *) &var);
     char letter = 'a';
@@ -55,6 +50,7 @@ int lab9(){
         topTeams[i] = -1;
     }
     for(int i=0;i<teams;i++){
+        result[i][15] = 0;
         printf("%c ",letter+i);
         for(int j=0;j<teams;j++){
             printf("%d ", result[i][j]);
