@@ -1,6 +1,8 @@
-#include "labs/lab10_internet.c"
+#include <stdio.h>
+#include "/labs/lab11.c"
+
 
 int main(){
-    lab10_internet();
+    lab11();
     return 0;
 }
